@@ -1,0 +1,11 @@
+.h-10 {
+  height: 10%;
+}
+.bg-principal {
+  background-color: rgb(229, 126, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(178, 9, 220) 12%,
+    rgba(6, 132, 216, 1) 100%
+  );
+}
