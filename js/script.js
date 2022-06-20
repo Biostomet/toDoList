@@ -8,19 +8,29 @@ let list = (document.getElementById("infoButton").onclick = function () {
     document.getElementById("error").textContent =
       "Veuillez mettre moins de 35 caractères";
   } else {
-    console.log("Tout est ok pour envoyer");
     document.getElementById("error").textContent = "";
     document.getElementById(
       "addBox"
-    ).innerHTML += `<div id="deleteList" class="d-flex justify-content-between align-items-center task">
+    ).innerHTML += `<div id="deleteList" class="d-flex justify-content-between align-items-center border-bottom py-3 task">
     <li class="my-1 mx-2">${toAdd.value}</li>
-    <button id="deleteButton" type="button" class="btn btn-danger my-1 mx-2 ddelete="deleteList">
+    <button type="button" class="btn btn-danger my-1 mx-2 delete">
       Delete
     </button>
   </div>`;
+
+    let currentTask = document.querySelectorAll(".delete");
+    for (let i = 0; i < currentTask.length; i++) {
+      currentTask[i].onclick = function () {
+        this.parentNode.remove();
+      };
+    }
+
+    let barrerTask = document.querySelectorAll("LI");
+    for (let i = 0; i < barrerTask.length; i++) {
+      barrerTask[i].onclick = function () {
+        this.classList.toggle("completed");
+      };
+    }
   }
   toAdd.value = "";
 });
-
-let supprimer = (document.getElementById("deleteButton").onclick =
-  function () {});

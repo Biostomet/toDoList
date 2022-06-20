@@ -9,3 +9,11 @@
     rgba(6, 132, 216, 1) 100%
   );
 }
+.curseur:hover {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(0, 187, 91);
+}
